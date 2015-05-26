@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans default-autowire="no">
+
+
+
+    <bean id="hazelCastBean" class="com.beans.HazelCastBean" init-method="init">
+        <property name="confFile" value="Hazelcast.xml" />
+        <property name="topicName" value="JUST_TEST" />
+        <property name="topicMessageListener" ref="topicMessageListener" />
+    </bean>
+
+    <bean id="topicMessageListener" class="com.beans.TopicMessageListener">
+    </bean>
+
+</beans>
